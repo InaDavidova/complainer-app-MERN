@@ -27,11 +27,28 @@ export default function Form() {
     return `${year}-${month}-${day}`;
   }
 
-  function onFormSubmit(e){
+  function onFormSubmit(e) {
     e.preventDefault();
-      const formData = new FormData(e.target);
-      const [type, issue, notes, serialNo, date, name, email] = formData.values();
-      console.log(type, issue, notes, serialNo, date, name, email, file);
+    const formData = new FormData(e.target);
+    const [type, issue, notes, serialNo, date, name, email] = formData.values();
+
+    const newPost = {
+      laptopType: type,
+      issue: issue,
+      notes: notes,
+      serialNo: serialNo,
+      date: date,
+      name: name,
+      email: email,
+      selectedFile: file,
+    };
+
+    try {
+      createPost(newPost);
+      console.log("Should be created");
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
