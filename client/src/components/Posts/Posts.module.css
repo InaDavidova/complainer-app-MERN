@@ -1,0 +1,44 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    background-attachment: rgb(238, 190, 173);
+    width: 250px;
+    padding-bottom: 5px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin: 10px;
+}
+
+.card button {
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    border: none;
+    font-size: 1em;
+    padding: 5px 35px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+img {
+    width: 250px;
+    max-height: 200px;
+    border-top-right-radius: 50px;
+}
+
+h1 {
+    font-size: 1em;
+}
+
+h2, p {
+    font-size: 0.8em;
+}
+
+span {
+    font-weight: 600;
+}
