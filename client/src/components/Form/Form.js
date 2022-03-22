@@ -3,14 +3,13 @@ import { createPost } from "../../api/index.js";
 import styles from './Form.module.css';
 import FileBase from "react-file-base64";
 import dateFormater from './dateFormater.js';
-import validator from 'validator';
+import inputValidator from './inputValidator.js';
+import laptopTypes from './laptopTypes.js';
+import issues from './issues.js';
 
 export default function Form(props) {
   const [selectedFile, setFile] = useState("");
   const [errors, setErrors] = useState({});
-
-  const laptopTypes = ["Lenovo P50", "Lenovo P50s", "Lenovo P51", "Lenovo P51s", "Lenovo P52", "Lenovo P52s"];
-  const issues = ["Brocken screen", "Broken keyboard", "Physical damage - other", "Laptop crashing", "Software missing", "Other"];
 
   function onFormSubmit(e) {
     e.preventDefault();
@@ -28,54 +27,17 @@ export default function Form(props) {
       selectedFile: selectedFile,
     };
 
-    function inputValidator(userInputData){
-      console.log(userInputData);
-      const errorsData = {};
-      const serialNoRgx = /^[a-zA-Z\d]{5}-[a-zA-Z\d]{6}$/gm;
-
-      if(userInputData.laptopType === "-- select an option --"){
-        errorsData.laptopType = "Please select a laptop type!";
-      }
-
-      if(userInputData.issue ===  "-- select an option --"){
-        errorsData.issue = "Please select a laptop type!";
-      }
-
-      if(!userInputData.notes){
-        errorsData.notes = "Please add some notes describing the problem!"
-      }
-
-      if(serialNoRgx.exec(userInputData.serialNo) === null){
-        errorsData.serialNo = "Please add a valid serial number! Example: 3rD7a-pO9iu"
-      }
-
-      if(!userInputData.date){
-        errorsData.date = "Please enter the date this problem occured!"
-      }
-
-      if(!userInputData.name){
-        errorsData.name = "Please enter your name!"
-      }
-
-      if(!validator.isEmail(userInputData.email)){
-        errorsData.email = "Please enter a valid email!"
-      }
-
-      return errorsData;
-    }
-
-    const errObj = inputValidator(newPost);
     try {
-      if(Object.keys(errObj).length === 0){
+      const errObj = inputValidator(newPost);
 
+      if (Object.keys(errObj).length === 0) {
         setErrors(inputValidator(newPost));
         createPost(newPost);
-        console.log("Should be created");
         props.history.push("/posts");
-      } else{
+
+      } else {
         setErrors(errObj);
       }
-
     } catch (err) {
       console.log(err);
     }
