@@ -1,0 +1,38 @@
+.activeNavbarLink {
+    font-weight: 800;
+    background-color: white;
+    color: #282c34;
+    border-top: 1vh solid #282c34;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    margin-top: 1vh;
+    height: 8vh;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: antiquewhite;
+    padding: 0 5px;
+    height: inherit;
+    width: 33%;
+}
+
+header {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.1em;
+    color: white;
+}
+
+nav{
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    height: 10vh;
+}

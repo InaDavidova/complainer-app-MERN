@@ -6,9 +6,9 @@
 }
 
 .card {
-    background-attachment: rgb(238, 190, 173);
+    background-color: rgb(238, 190, 173);
     width: 250px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
     margin: 10px;
@@ -27,7 +27,7 @@
 
 img {
     width: 250px;
-    max-height: 200px;
+    height: 180px;
     border-top-right-radius: 50px;
 }
 
