@@ -60,11 +60,11 @@
   border-bottom-right-radius: 15px;
 }
 
-.card button:hover{
-    cursor: pointer;
-    transform: translateY(-0.1em);
-    box-shadow: 0 0.3em 0.3em -0.1em #204768;
-    transition: all 0.5s ease;
+.card button:hover {
+  cursor: pointer;
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.3em 0.3em -0.1em #204768;
+  transition: all 0.5s ease;
 }
 
 .card span {
