@@ -1,96 +1,109 @@
 .main {
-    background-image: url('../../images/landingPagePic.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-image: url("../../images/landingPagePic.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.main div{
-    background-color: rgb(255, 255, 255, 0.7);
-    width: 40%;
-    padding: 10px 0;
-    margin: 20px 0;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.main div {
+  background-color: rgb(255, 255, 255, 0.7);
+  width: 40%;
+  padding: 10px 0;
+  margin: 20px 0;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main div div{
-    background-color: rgb(255, 255, 255, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
+.main div div {
+  background-color: rgb(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
 }
 
-.main h1{
-    font-size: 1.5em;
-    margin: 5px 0;
-    color: #e85c6d;
+.main h1 {
+  font-size: 1.5em;
+  margin: 5px 0;
+  color: #e85c6d;
 }
 
 .main span {
-    color: #e85c6d;
+  color: #e85c6d;
 }
 
 .createForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .createForm input,
 .createForm select,
 .createForm textarea {
-    width: 70%;
-    padding: 5px 2px;
-    border-radius: 10px;
-    border: 1px solid #204768;
+  width: 70%;
+  padding: 5px 2px;
+  border-radius: 10px;
+  border: 1px solid #204768;
 }
 
-.createForm input[type=file]{
- border: none;
- color: #204768;
+.createForm input:hover,
+.createForm select:hover,
+.createForm textarea:hover {
+  cursor: pointer;
 }
 
-.createForm label{
-    margin: 10px 0 3px 0;
-    font-weight: 600;
-    color: #204768;
+.createForm input[type="file"] {
+  border: none;
+  color: #204768;
 }
 
-.createForm p{
-    margin-top: 10px;
-    font-weight: 600;
-    color: #204768;
+.createForm label {
+  margin: 10px 0 3px 0;
+  font-weight: 600;
+  color: #204768;
 }
 
-.createForm button{
-    width: 40%;
-    margin-top: 10px;
-    font-size: 1.2em;
-    font-weight: 600;
-    color: white;
-    background-color: #e85c6d;
-    border: none;
-    border-radius: 15px;
-    padding: 5px 15px;
-    letter-spacing: 1px;
+.createForm p {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #204768;
+}
+
+.createForm button {
+  width: 40%;
+  margin-top: 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+  background-color: #e85c6d;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+}
+
+.createForm button:hover {
+  cursor: pointer;
+  transform: translateY(-0.1em);
+  box-shadow: 0 0.3em 0.3em -0.2em #204768;
+  transition: all 0.5s ease;
 }
 
 .error {
-    font-weight: 600;
-    color: red;
-    padding: 4px 10px;
-    margin-top: 3px;
-    background-color: bisque;
-    letter-spacing: 0.2px;
-    border-radius: 5px;
+  font-weight: 600;
+  color: red;
+  padding: 4px 10px;
+  margin-top: 3px;
+  background-color: bisque;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
 }

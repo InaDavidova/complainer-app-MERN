@@ -73,65 +73,67 @@ export default function Posts() {
 
   return (
     <div className={styles.main}>
-      <h1>All Posts</h1>
+      <div className={styles.subMain}>
+        <div className={styles.filterForm}>
+          <h1>All Posts</h1>
 
-      <div>
-        <h3>Filter by:</h3>
-        <form className={styles.filterForm}>
-          <div className={styles.inputsDiv}>
+          <h3>Filter by:</h3>
+          <form >
+            <div className={styles.inputsDiv}>
 
-            <div>
-              <label htmlFor="laptopType">Laptop Type</label>
-              <select name="laptopType" id="laptopType">
-                <option>All</option>
-                {laptopTypes.map((el, i) => <option key={i}>{el}</option>)}
-              </select>
+              <div>
+                <label htmlFor="laptopType">Laptop Type</label>
+                <select name="laptopType" id="laptopType">
+                  <option>All</option>
+                  {laptopTypes.map((el, i) => <option key={i}>{el}</option>)}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="issue">Issue</label>
+                <select name="issue" id="issue">
+                  <option>All</option>
+                  {issues.map((el, i) => <option key={i}>{el}</option>)}
+                </select>
+              </div>
+                
+              <div>
+                <label htmlFor="dateFrom">Date from</label>
+                <input name="dateFrom" id="dateFrom" type="date" max={dateFormater()} onChange={setDateFromHandler} />
+              </div>
+                
+              <div>
+                <label htmlFor="dateTo">Date to</label>
+                <input name="dateTo" id="dateTo" type="date" min={dateFrom} max={dateFormater()} />
+              </div>
             </div>
 
             <div>
-              <label htmlFor="issue">Issue</label>
-              <select name="issue" id="issue">
-                <option>All</option>
-                {issues.map((el, i) => <option key={i}>{el}</option>)}
-              </select>
+              <button onClick={filterDataHandler}>Filter</button>
+              <button id="resetBtn" className={styles.resetBtn} onClick={filterDataHandler}>Reset</button>
             </div>
-              
-            <div>
-              <label htmlFor="dateFrom">Date from</label>
-              <input name="dateFrom" id="dateFrom" type="date" max={dateFormater()} onChange={setDateFromHandler} />
-            </div>
-              
-            <div>
-              <label htmlFor="dateTo">Date to</label>
-              <input name="dateTo" id="dateTo" type="date" min={dateFrom} max={dateFormater()} />
-            </div>
-          </div>
+          </form>
+        </div>
 
-          <div>
-            <button onClick={filterDataHandler}>Filter</button>
-            <button id="resetBtn" className={styles.resetBtn} onClick={filterDataHandler}>Reset</button>
-          </div>
-        </form>
-      </div>
-
-      <div className={styles.content}>
-        {filteredData.length === 0 && <p className={styles.noDataP}>Sorry, there is no data to show!</p>}
-        {filteredData.map((el) => (
-          <div key={el._id} className={styles.card}>
-            <img
-              src={el.selectedFile ? el.selectedFile : brokenLaptopPic}
-              alt="visualisation of the issue"
-            />
-            <h2>Issue: <span>{el.issue}</span></h2>
-            <p>Laptop type: <span>{el.laptopType}</span></p>
-            <p>Serial number: <span>{el.serialNo}</span></p>
-            <p>Date of occurrence: <span>{el.date}</span></p>
-            <p>User's name : <span>{el.name}</span></p>
-            <p>User's email : <span>{el.email}</span></p>
-            <p>User's notes : <span>{el.notes}</span></p>
-            <button onClick={deletePostHandler} id={el._id}>Delete</button>
-          </div>
-        ))}
+        <div className={styles.content}>
+          {filteredData.length === 0 && <p className={styles.noDataP}>Sorry, there is no data to show!</p>}
+          {filteredData.map((el) => (
+            <div key={el._id} className={styles.card}>
+              <img
+                src={el.selectedFile ? el.selectedFile : brokenLaptopPic}
+                alt="visualisation of the issue"
+              />
+              <h2>Issue: <span>{el.issue}</span></h2>
+              <p>Laptop type: <span>{el.laptopType}</span></p>
+              <p>Serial number: <span>{el.serialNo}</span></p>
+              <p>Date of occurrence: <span>{el.date}</span></p>
+              <p>User's name : <span>{el.name}</span></p>
+              <p>User's email : <span>{el.email}</span></p>
+              <p>User's notes : <span>{el.notes}</span></p>
+              <button onClick={deletePostHandler} id={el._id}>Delete</button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
