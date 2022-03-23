@@ -10,6 +10,7 @@ import issues from './issues.js';
 export default function Form(props) {
   const [selectedFile, setFile] = useState("");
   const [errors, setErrors] = useState({});
+  const [popUp, setPopUp] = useState(false);
 
   function onFormSubmit(e) {
     e.preventDefault();
@@ -35,6 +36,7 @@ export default function Form(props) {
         createPost(newPost);
         // props.history.push("/");
         e.target.reset();
+        setPopUp(true);
 
       } else {
         setErrors(errObj);
@@ -50,6 +52,10 @@ export default function Form(props) {
     delete updatedErrors[inputName];
     setErrors(updatedErrors);
   }
+  
+  function hidePopUp(){
+    setPopUp(false);
+  }
 
   return (
     <div className={styles.main}>
@@ -57,50 +63,116 @@ export default function Form(props) {
         <div>
           <h1>Create Form</h1>
           <form onSubmit={onFormSubmit} className={styles.createForm}>
-
-            <label htmlFor="laptopType">Laptop Type <span>*</span></label>
-            <select name="laptopType" id="laptopType" onChange={inputChangeHandler}>
+            <label htmlFor="laptopType">
+              Laptop Type <span>*</span>
+            </label>
+            <select
+              name="laptopType"
+              id="laptopType"
+              onChange={inputChangeHandler}
+            >
               <option>-- select an option --</option>
-              {laptopTypes.map((el, i) => <option key={i}>{el}</option>)}
+              {laptopTypes.map((el, i) => (
+                <option key={i}>{el}</option>
+              ))}
             </select>
-            {errors.laptopType && <p className={styles.error}>{errors.laptopType}</p>}
+            {errors.laptopType && (
+              <p className={styles.error}>{errors.laptopType}</p>
+            )}
 
-            <label htmlFor="issue">Issue <span>*</span></label>
+            <label htmlFor="issue">
+              Issue <span>*</span>
+            </label>
             <select name="issue" id="issue" onChange={inputChangeHandler}>
               <option>-- select an option --</option>
-              {issues.map((el, i) => <option key={i}>{el}</option>)}
+              {issues.map((el, i) => (
+                <option key={i}>{el}</option>
+              ))}
             </select>
             {errors.issue && <p className={styles.error}>{errors.issue}</p>}
 
-            <label htmlFor="notes">Notes <span>*</span></label>
-            <textarea name="notes" id="notes" placeholder="Please add here any notes ..." onChange={inputChangeHandler} />
+            <label htmlFor="notes">
+              Notes <span>*</span>
+            </label>
+            <textarea
+              name="notes"
+              id="notes"
+              placeholder="Please add here any notes ..."
+              onChange={inputChangeHandler}
+            />
             {errors.notes && <p className={styles.error}>{errors.notes}</p>}
-            
-            <label htmlFor="serialNo"> Serial number <span>*</span></label>
-            <input name="serialNo" id="serialNo" placeholder="Serial number" onChange={inputChangeHandler}/>
-            {errors.serialNo && <p className={styles.error}>{errors.serialNo}</p>}
-            
-            <label htmlFor="date">Date <span>*</span></label>
-            <input name="date" id="date" type="date" max={dateFormater()} onChange={inputChangeHandler}/>
+
+            <label htmlFor="serialNo">
+              {" "}
+              Serial number <span>*</span>
+            </label>
+            <input
+              name="serialNo"
+              id="serialNo"
+              placeholder="Serial number"
+              onChange={inputChangeHandler}
+            />
+            {errors.serialNo && (
+              <p className={styles.error}>{errors.serialNo}</p>
+            )}
+
+            <label htmlFor="date">
+              Date <span>*</span>
+            </label>
+            <input
+              name="date"
+              id="date"
+              type="date"
+              max={dateFormater()}
+              onChange={inputChangeHandler}
+            />
             {errors.date && <p className={styles.error}>{errors.date}</p>}
-            
-            <label htmlFor="name">Name <span>*</span></label>
-            <input name="name" id="name" placeholder="Please enter your name ..." onChange={inputChangeHandler}/>
+
+            <label htmlFor="name">
+              Name <span>*</span>
+            </label>
+            <input
+              name="name"
+              id="name"
+              placeholder="Please enter your name ..."
+              onChange={inputChangeHandler}
+            />
             {errors.name && <p className={styles.error}>{errors.name}</p>}
-            
-            <label htmlFor="email">Email <span>*</span></label>
-            <input name="email" id="email" placeholder="Please enter your email ..." onChange={inputChangeHandler}/>
+
+            <label htmlFor="email">
+              Email <span>*</span>
+            </label>
+            <input
+              name="email"
+              id="email"
+              placeholder="Please enter your email ..."
+              onChange={inputChangeHandler}
+            />
             {errors.email && <p className={styles.error}>{errors.email}</p>}
-            
-            <label htmlFor="fileBtn" >Picture</label>
-            <FileBase type="file" id="fileBtn" multiple={false} onDone={({base64}) => setFile(base64)} />
-            
-            <p>All fields marked with an asterisk (<span>*</span>) are required</p>
+
+            <label htmlFor="fileBtn">Picture</label>
+            <FileBase
+              type="file"
+              id="fileBtn"
+              multiple={false}
+              onDone={({ base64 }) => setFile(base64)}
+            />
+
+            <p>
+              All fields marked with an asterisk (<span>*</span>) are required
+            </p>
             <button>Submit</button>
           </form>
         </div>
       </div>
+        {popUp && (
+          <div className={styles.notificationDiv}>
+            <div className={styles.notificationDivContent}>
+              <p>You have successfully filed a complaint!</p>
+              <button onClick={hidePopUp}>OK</button>
+            </div>
+          </div>
+        )}
     </div>
-    
   );
 }

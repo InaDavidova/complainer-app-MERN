@@ -13,6 +13,7 @@
 .main div {
   background-color: rgb(255, 255, 255, 0.7);
   width: 40%;
+  min-width: 450px;
   padding: 10px 0;
   margin: 20px 0;
   border-radius: 30px;
@@ -22,11 +23,11 @@
 }
 
 .main div div {
-  background-color: rgb(255, 255, 255, 0.7);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
+  /* background-color: rgb(255, 255, 255, 0.7); */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  min-width: 90%;
 }
 
 .main h1 {
@@ -106,4 +107,39 @@
   background-color: bisque;
   letter-spacing: 0.2px;
   border-radius: 5px;
+}
+
+.main .notificationDiv{
+  background-color: rgb(255, 255, 255, 0.9);
+  position: fixed;
+  width: 100%;
+  height: 160vh;
+  display: flex;
+  justify-content: center;
+}
+
+.main .notificationDivContent{
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #204768;
+  letter-spacing: 1px;
+  background-color: white;
+  border: 1px solid #204768;
+  display: flex;
+  justify-content: center;
+  height: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  margin-bottom: 200px;
+
+}
+
+.notificationDiv button {
+  font-weight: 600;
+  background-color: #204768;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 55px;
+  letter-spacing: 1px;
+  margin-top: 30px;
 }
