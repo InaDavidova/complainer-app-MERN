@@ -30,6 +30,10 @@
     border-bottom-right-radius: 15px;
 }
 
+.card span {
+    font-weight: 600;
+}
+
 .inputsDiv {
     display: flex;
 }
@@ -42,14 +46,6 @@
     padding: 0 5px;
 }
 
-input, select {
-    width: 100%;
-}
-
-select{
-    height: 34px;
-}
-
 img {
     width: 250px;
     height: 180px;
@@ -57,7 +53,8 @@ img {
 }
 
 h1 {
-    font-size: 1em;
+    font-size: 2em;
+    letter-spacing: 1px;
 }
 
 h2, p {
@@ -66,10 +63,35 @@ h2, p {
     margin: 5px 0;
 }
 
-form {
+.filterForm {
     width: 100%;
 }
 
-span {
+.filterForm .resetBtn {
+    color: rgb(255, 162, 162);
+}
+
+.filterForm button{
+    padding: 5px 25px;
+    margin: 10px 20px;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #282c34;
+}
+
+
+.filterForm input,
+.filterForm select {
+    width: 100%;
+}
+
+.filterForm select {
+    height: 24px;
+}
+
+.filterForm label {
     font-weight: 600;
+    letter-spacing: 1px;
 }

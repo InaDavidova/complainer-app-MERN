@@ -1,16 +1,18 @@
-form {
+.createForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
 }
 
-input, select, textarea {
+.createForm input,
+.createForm select,
+.createForm textarea {
     width: 50%;
     padding: 5px 0;
 }
 
-label{
+.createForm label{
     margin-top: 10px;
 }
 

@@ -3,6 +3,7 @@
     background-color: white;
     color: #282c34;
     border-top: 1vh solid #282c34;
+    border-bottom: 1px solid white;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     margin-top: 1vh;
@@ -28,6 +29,10 @@ header {
     justify-content: space-around;
     font-size: 1.1em;
     color: white;
+}
+
+header h1{
+    font-size: 1em;
 }
 
 nav{

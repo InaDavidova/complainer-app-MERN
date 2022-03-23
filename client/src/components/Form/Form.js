@@ -33,7 +33,7 @@ export default function Form(props) {
       if (Object.keys(errObj).length === 0) {
         setErrors(inputValidator(newPost));
         createPost(newPost);
-        props.history.push("/posts");
+        props.history.push("/");
 
       } else {
         setErrors(errObj);
@@ -52,8 +52,8 @@ export default function Form(props) {
 
   return (
     <>
-      <h2>Form Page</h2>
-      <form onSubmit={onFormSubmit}>
+      <h1>Create Form</h1>
+      <form onSubmit={onFormSubmit} className={styles.createForm}>
 
         <label htmlFor="laptopType">Laptop Type *</label>
         <select name="laptopType" id="laptopType" onChange={inputChangeHandler}>

@@ -34,13 +34,12 @@ export default function Posts() {
 
   function filterDataHandler(e){
     e.preventDefault();
-    const formData = new FormData(e.target.parentElement);
+    const formData = new FormData(e.target.parentElement.parentElement);
     const [laptopType, issue, startDate, endDate] = formData.values();
     let filterData = [...data];
 
     if(e.target.id === "resetBtn"){
-      console.log('res');
-      e.target.parentElement.reset();
+      e.target.parentElement.parentElement.reset();
       setFilteredData(data);
       return;
     }
@@ -70,11 +69,11 @@ export default function Posts() {
 
   return (
     <>
-      <h2>Posts Page</h2>
+      <h1>All Posts</h1>
 
       <div>
         <h3>Filter by:</h3>
-        <form>
+        <form className={styles.filterForm}>
           <div className={styles.inputsDiv}>
 
             <div>
@@ -104,8 +103,10 @@ export default function Posts() {
             </div>
           </div>
 
-          <button onClick={filterDataHandler}>Filter</button>
-          <button id="resetBtn" onClick={filterDataHandler}>Reset</button>
+          <div>
+            <button onClick={filterDataHandler}>Filter</button>
+            <button id="resetBtn" className={styles.resetBtn} onClick={filterDataHandler}>Reset</button>
+          </div>
         </form>
       </div>
 

@@ -1,7 +1,6 @@
 import validator from "validator";
 
 export default function inputValidator(userInput) {
-  console.log(userInput);
   const errorsData = {};
   const serialNoRgx = /^[a-zA-Z\d]{5}-[a-zA-Z\d]{6}$/gm;
 

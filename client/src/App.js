@@ -4,7 +4,6 @@ import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
 import Posts from "./components/Posts/Posts";
 
-
 function App() {
   return (
     <div className="App">
