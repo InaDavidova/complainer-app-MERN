@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {getAllPosts, deletePost} from '../../api/index.js';
-import brokenLaptopPic from '../../images/brokenLaptop.jpg';
+import brokenLaptopPic from '../../images/brokenLaptop.png';
 import styles from './Posts.module.css';
 import laptopTypes from '../Form/laptopTypes.js';
 import issues from '../Form/issues.js';
@@ -24,9 +24,13 @@ export default function Posts() {
   async function deletePostHandler(e) {
     try{
       const id = e.target.id;
+      console.log(id);
       await deletePost(id);
       const newData = data.filter(el=>el._id !== id);
       setData(newData);
+      const newFiltData = filteredData.filter(el=>el._id !== id);
+      setFilteredData(newFiltData);
+
     } catch(err){
       console.log(err);
     }
@@ -68,7 +72,7 @@ export default function Posts() {
   }
 
   return (
-    <>
+    <div className={styles.main}>
       <h1>All Posts</h1>
 
       <div>
@@ -111,6 +115,7 @@ export default function Posts() {
       </div>
 
       <div className={styles.content}>
+        {filteredData.length === 0 && <p className={styles.noDataP}>Sorry, there is no data to show!</p>}
         {filteredData.map((el) => (
           <div key={el._id} className={styles.card}>
             <img
@@ -128,6 +133,6 @@ export default function Posts() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
