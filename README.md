@@ -8,7 +8,7 @@ Make sure you have installed Node.js on your mashine.
 
 Navigate yourself to the server and client folder in 2 different terminals.
 
-- run ```npm i && npm start``` for both client and server folders to start the app
+- run ```npm install``` and after that  ```npm start``` for both client and server folders to start the app
 
 Thank you for your attention!
 If you have problem, feel free to contact me.
