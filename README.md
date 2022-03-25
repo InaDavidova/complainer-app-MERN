@@ -11,4 +11,4 @@ Navigate yourself to the server and client folder in 2 different terminals.
 - run ```npm install``` and after that  ```npm start``` for both client and server folders to start the app
 
 Thank you for your attention!
-If you have problem, feel free to contact me.
+If you have any problems with the app, feel free to contact me.
