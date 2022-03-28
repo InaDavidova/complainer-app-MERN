@@ -9,7 +9,7 @@ export default function inputValidator(userInput) {
   }
 
   if (userInput.issue === "-- select an option --") {
-    errorsData.issue = "Please select a laptop type!";
+    errorsData.issue = "Please select an issue!";
   }
 
   if (!userInput.notes) {
