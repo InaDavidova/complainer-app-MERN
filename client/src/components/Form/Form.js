@@ -7,12 +7,12 @@ import inputValidator from './inputValidator.js';
 import laptopTypes from './laptopTypes.js';
 import issues from './issues.js';
 
-export default function Form(props) {
+export default function Form() {
   const [selectedFile, setFile] = useState("");
   const [errors, setErrors] = useState({});
   const [popUp, setPopUp] = useState(false);
 
-  function onFormSubmit(e) {
+  async function onFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const [laptopType, issue, notes, serialNo, date, name, email] = formData.values();
@@ -33,8 +33,7 @@ export default function Form(props) {
 
       if (Object.keys(errObj).length === 0) {
         setErrors(inputValidator(newPost));
-        createPost(newPost);
-        // props.history.push("/");
+        await createPost(newPost);
         e.target.reset();
         setPopUp(true);
 
