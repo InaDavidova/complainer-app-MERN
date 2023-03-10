@@ -17,7 +17,7 @@ export default function inputValidator(userInput) {
   }
 
   if (serialNoRgx.exec(userInput.serialNo) === null) {
-    errorsData.serialNo = "Please add a valid serial number! Example: 3rD7a-pO9iu";
+    errorsData.serialNo = "Please add a valid serial number (<5 digits and letters> - <6 digits and letters> )! Example: 3rD7a-pO9iuY";
   }
 
   if (!userInput.date) {
