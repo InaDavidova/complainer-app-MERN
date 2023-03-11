@@ -6,7 +6,7 @@ I created this MERN application for a 3 days coding challenge. I used React, Nod
 
 Make sure you have installed Node.js on your mashine.
 
-Navigate yourself to the server and client folder in 2 different terminals.
+Navigate yourself to the <b>server</b> and <b>client</b> folder in 2 different terminals.
 
 - run ```npm install``` and after that  ```npm start``` for both client and server folders to start the app
 
@@ -17,14 +17,14 @@ If you have any problems with the app, feel free to contact me.
  
  ### Home page
  
-<img src="./client/image/readme/home.png"/>
+<img src="./client/src/images/readme/home.png"/>
 
- ### Form page (when is owner's)
+ ### Form page
  
-<img src="./client/image/readme/details.png"/>
+<img src="./client/src/images/readme/form.png"/>
 
  ### Catalog page
  
-<img src="./client/image/readme/catalog.png"/>
+<img src="./client/src/images/readme/catalog.png"/>
 
 Thank you for your attention!
