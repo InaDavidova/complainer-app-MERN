@@ -13,4 +13,18 @@ Navigate yourself to the server and client folder in 2 different terminals.
 
 If you have any problems with the app, feel free to contact me.
 
+## Views:
+ 
+ ### Home page
+ 
+<img src="./client/image/readme/home.png"/>
+
+ ### Form page (when is owner's)
+ 
+<img src="./client/image/readme/details.png"/>
+
+ ### Catalog page
+ 
+<img src="./client/image/readme/catalog.png"/>
+
 Thank you for your attention!
