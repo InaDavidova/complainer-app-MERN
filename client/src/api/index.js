@@ -8,11 +8,11 @@ export async function getAllPosts() {
 }
 
 export async function createPost(newPost) {
-  const result = axios.post(url, newPost);
+  const result = await axios.post(url, newPost);
   return result.data;
 }
 
 export async function deletePost(id) {
-  const result = axios.delete(url + `/${id}`);
+  const result = await axios.delete(url + `/${id}`);
   return result.data;
 }

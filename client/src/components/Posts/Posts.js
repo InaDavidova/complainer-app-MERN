@@ -24,7 +24,6 @@ export default function Posts() {
   async function deletePostHandler(e) {
     try{
       const id = e.target.id;
-      console.log(id);
       await deletePost(id);
       const newData = data.filter(el=>el._id !== id);
       setData(newData);
